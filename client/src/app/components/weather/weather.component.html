@@ -1,0 +1,35 @@
+<div class="weather">
+  <mat-toolbar>
+    <span>Hello {{user?.name}}</span>
+    <span class="example-spacer"></span>
+    <span>Entry Times: {{user?.entry_count}}</span>
+  </mat-toolbar>
+
+  <div *ngIf="golocationDenied" class="message">
+    To see the weather at your location, Please enable your location in browser and refresh page:)</div>
+
+  <div *ngIf="!golocationDenied && weatherDetails" class="weather-details">
+    <mat-card>
+      <img [src]="imageUrl"/>
+
+      <div class="content">
+        <div class="temperature">{{weatherDetails.temperature | number: '1.0-0'}}°C</div>
+
+        <div class="wind">
+          <div class="wind-info">
+            <mat-icon aria-hidden="false" aria-label="Example air icon" fontIcon="air"></mat-icon>
+            <span class="text">Wind speed {{weatherDetails.windspeed}}</span>
+          </div>
+
+          <div class="wind-info">
+            <mat-icon aria-hidden="false" aria-label="Example air icon" fontIcon="air"></mat-icon>
+            <span class="text">Wind direction {{weatherDetails.winddirection}}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div *ngIf="!golocationDenied && !weatherDetails && !loading" class="message">
+    Sorry we had trouble getting weather details, Please try again:)</div>
+</div>

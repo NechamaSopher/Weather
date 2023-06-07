@@ -1,0 +1,87 @@
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #BAD7FF;
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .weather-details {
+    margin: auto;
+  }
+
+  .mat-toolbar {
+    position: fixed;
+    top: 0;
+    background: #FFF;
+    color: #2561A0;
+  }
+
+  .message {
+    width: 40vw;
+    text-align: center;
+    color: #2561A0;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  mat-card {
+    position: relative;
+    width: 400px;
+    height: 70vh;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px gray;
+    background: #BAD7FF;
+    transform: translateY(2rem);
+    max-width: 90vw;
+
+    img {
+      height: 60%;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 40%;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1;
+
+      .temperature {
+        position: absolute;
+        top: calc(60% - 3rem);
+        font-size: 6rem;
+        font-weight: 600;
+      }
+
+      .wind {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+
+        .wind-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .text {
+            text-align: center;
+            font-size: .8rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
